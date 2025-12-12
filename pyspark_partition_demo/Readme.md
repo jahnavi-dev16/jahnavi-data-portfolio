@@ -20,17 +20,22 @@ Basically showing how Spark stores, organizes, and optimizes data using partitio
 **Step 3:** Use Spark to explain how many partitions are created, where the data is stored, and how it is organized inside each partition.
 **Step 4:** Apply a filter or clustering. (Clustering improves speed and helps retrieve specific information from the required partition.)
 ![Flow Diagram](images/spark_partitioning_flow.png)
+
+
+
 **code explanation:**
 This code (generate\_data.py) generates 1000 random records and stores them as data.csv in the same folder where the Python script is running.
 
-![Files.](pyspark_partition_demo/images/spark_partitioning_clustering_demo.png)
+![Clustering Demo](images/spark_partitioning_clustering_demo.png)
+
 **code:**
 This partition.demo code reads the CSV file in Spark, partitions data by month using Pandas, and stores those partitions in the same folder where the Python code runs. Finally, it prints a success message.
 **code:**
-
 This code reads all partitioned CSV files and combines them. It shows the total number of records and displays how many partitions are saved and in which folders the data is stored.
 
-![Files.](pyspark_partition_demo/images/partitioned_data_month.png)
-**Code:**\
-This code filter\_clustering displays information for filtering and clustering. The filter displays data for a specific month, and the cluster combines that data by region to make it faster and more efficient. It also shows the before and after clustering results.
-![Final output.](pyspark_partition_demo/images/spark_partitioning_execution.png)
+![Partitioned Data](images/partitioned_data_month.png)
+
+**Code:**
+This code filter and clustering displays information for filtering and clustering. The filter displays data for a specific month, and the cluster combines that data by region to make it faster and more efficient. It also shows the before and after clustering results.
+![Final Output](images/spark_partitioning_execution.png)
+
