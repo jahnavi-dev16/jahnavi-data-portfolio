@@ -19,8 +19,7 @@ Basically showing how Spark stores, organizes, and optimizes data using partitio
 **Step 2:** Write the data into partitions (for example, by region, date, or ID).
 **Step 3:** Use Spark to explain how many partitions are created, where the data is stored, and how it is organized inside each partition.
 **Step 4:** Apply a filter or clustering. (Clustering improves speed and helps retrieve specific information from the required partition.)
-![Flow diagram.](pyspark_partition_demo/images/spark_partitioning_flow.png)
-
+![Flow Diagram](images/spark_partitioning_flow.png)
 **code explanation:**
 This code (generate\_data.py) generates 1000 random records and stores them as data.csv in the same folder where the Python script is running.
 
