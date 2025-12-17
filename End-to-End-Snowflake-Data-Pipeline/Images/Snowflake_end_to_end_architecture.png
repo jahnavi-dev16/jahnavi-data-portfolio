@@ -49,3 +49,5 @@ Advanced Snowflake Features:
 • Fail-safe (Disaster recovery)
 • Query Profile & Result Cache
 • Zero-Copy Cloning (Testing / Recovery)
+
+
