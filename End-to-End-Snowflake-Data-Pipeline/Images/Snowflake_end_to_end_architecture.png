@@ -1,1 +1,51 @@
+Source Data (JSON)
+        |
+        v
++----------------------+
+|        RAW           |
+|  - JSON VARIANT      |
+|  - load_ts           |
+|  - Full history      |
++----------------------+
+        |
+        |  Deduplication (ROW_NUMBER)
+        |  Latest by business key
+        v
++----------------------+
+|       SILVER         |
+|  - Typed columns     |
+|  - Clean data        |
+|  - Idempotent build  |
++----------------------+
+        |
+        |  SCD-2 MERGE (Hash based)
+        |  Track history (no overwrite)
+        v
++----------------------+
+|        GOLD          |
+|  - Current + History |
+|  - is_current flag   |
+|  - is_deleted flag   |
++----------------------+
+        |
+        |-----------------------------|
+        |                             |
+        v                             v
++------------------+        +----------------------+
+|      VIEW        |        |  MATERIALIZED VIEW   |
+|  Logical access  |        |  Stored results      |
+|  Always current  |        |  Performance boost   |
++------------------+        +----------------------+
+        |
+        v
++----------------------+
+|   Analytics / BI     |
+|   Reporting Layer    |
++----------------------+
 
+Advanced Snowflake Features:
+--------------------------------
+• Time Travel (Statement ID / Timestamp)
+• Fail-safe (Disaster recovery)
+• Query Profile & Result Cache
+• Zero-Copy Cloning (Testing / Recovery)
