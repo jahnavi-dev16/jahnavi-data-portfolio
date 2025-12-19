@@ -81,4 +81,4 @@ SELECT * FROM demo_silver.users_silver WHERE id = 3;
 
 
   
-ORDER BY id;
+
