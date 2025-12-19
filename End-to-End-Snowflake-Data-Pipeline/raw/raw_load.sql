@@ -137,4 +137,4 @@ FROM demo_raw.raw_users_json;
 
 
   
-}');
+
